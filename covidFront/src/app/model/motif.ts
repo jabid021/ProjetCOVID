@@ -1,7 +1,7 @@
 import {Consultation} from "./consultation";
-import {Practicien} from "./practicien";
+import {Praticien} from "./praticien";
 
 export class Motif
 {
-  constructor(id?:number,version?:number,libelle?:string,nbCreneau?:number,consultations?:Array<Consultation>,practicien?:Practicien) {}
+  constructor(id?:number,version?:number,libelle?:string,nbCreneau?:number,consultations?:Array<Consultation>,practicien?:Praticien) {}
 }
