@@ -9,6 +9,8 @@ import {Observable} from "rxjs";
 })
 export class PraticienService {
 
+  praticiens: Array<Praticien> = new Array<Praticien>();
+
   chemin: string;
   constructor(private http : HttpClient,private appconfig:AppConfigService) {
     this.chemin = this.appconfig.backEndUrl + "praticien/";
@@ -16,11 +18,17 @@ export class PraticienService {
   }
 
   findAll(): Array<Praticien> {
-    return null;
+    return this.praticiens;
   }
 
   findById(id: number): Observable<Praticien> {
     return this.http.get<Praticien>(this.chemin + id+"/with-specialite");
+  }
+
+  findAllPraticienWithSpecialites() {
+    this.http.get<Array<Praticien>>(this.appconfig.backEndUrl + "praticien/with-specialites/").subscribe(response => {
+      this.praticiens = response;
+    }, error => console.log(error));
   }
 
   create(praticien: Praticien) {
