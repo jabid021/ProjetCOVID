@@ -1,8 +1,9 @@
-import {Practicien} from "./practicien";
+
 import {Creneau} from "./creneau";
 import {Adresse} from "./adresse";
+import {Praticien} from "./praticien";
 
 export class Lieu
 {
-  constructor(id?:number,version?:number,nom?:string,virtuel?:boolean,adr?:Adresse,practicien?:Practicien,creneaux?:Array<Creneau>){}
+  constructor(id?:number,version?:number,nom?:string,virtuel?:boolean,adr?:Adresse,praticien?:Praticien,creneaux?:Array<Creneau>){}
 }
