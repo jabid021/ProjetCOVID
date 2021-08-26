@@ -1,3 +1,4 @@
+import {Adresse} from "./adresse";
 
 export abstract class Utilisateur {
   id:number;

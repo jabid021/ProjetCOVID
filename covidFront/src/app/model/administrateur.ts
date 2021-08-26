@@ -1,5 +1,7 @@
 
 import {Utilisateur} from "./utilisateur";
+import {Praticien} from "./praticien";
+import {Adresse} from "./adresse";
 
 export class Patient extends Utilisateur {
   praticiens:Array<Praticien>

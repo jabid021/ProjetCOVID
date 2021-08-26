@@ -1,4 +1,6 @@
 import {Utilisateur} from "./utilisateur";
+import {Adresse} from "./adresse";
+import {Consultation} from "./consultation";
 
 export class Patient extends Utilisateur {
   dateNaissance: string;
