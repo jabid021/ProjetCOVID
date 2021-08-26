@@ -6,11 +6,11 @@ import {Specialite} from "../model/specialite";
 
 
 @Component({
-  selector: 'practicien-infos-perso',
-  templateUrl: './practicien-infos-perso.component.html',
-  styleUrls: ['./practicien-infos-perso.component.scss']
+  selector: 'praticien-infos-perso',
+  templateUrl: './praticien-infos-perso.component.html',
+  styleUrls: ['./praticien-infos-perso.component.scss']
 })
-export class PracticienInfosPersoComponent implements OnInit {
+export class PraticienInfosPersoComponent implements OnInit {
 
   praticien: Praticien = null;
   praticienForm: Praticien = null;
