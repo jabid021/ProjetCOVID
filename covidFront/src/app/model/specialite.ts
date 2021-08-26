@@ -1,5 +1,5 @@
 import {Praticien} from "./praticien";
 export class Specialite {
-  constructor(id?:number,version?:number,nom?:string,description?:string,practiciens?:Array<Praticien>)
+  constructor(public id?:number,public version?: number,public nom?:string,public description?:string,public praticiens?:Array<Praticien>)
   {   }
 }
