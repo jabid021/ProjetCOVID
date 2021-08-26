@@ -12,13 +12,13 @@ import {Specialite} from "../model/specialite";
 })
 export class PraticienInfosPersoComponent implements OnInit {
 
-  praticien: Praticien = null;
+  praticien: Praticien = new Praticien();
   praticienForm: Praticien = null;
   constructor(private praticienService: PraticienService) {
   }
 
   ngOnInit(): void {
-    this.find();
+    
   }
 
   find() {
@@ -26,6 +26,7 @@ export class PraticienInfosPersoComponent implements OnInit {
     this.praticienService.findById(id).subscribe(response=>
       {
         this.praticien=response;
+        this.praticien=new Praticien();
         if(this.praticien.adresse==null)
         {
           this.praticien.adresse=new Adresse();
