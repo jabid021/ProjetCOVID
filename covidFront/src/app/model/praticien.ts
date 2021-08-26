@@ -1,4 +1,8 @@
 import {Utilisateur} from "./utilisateur";
+import {Lieu} from "./lieu";
+import {Creneau} from "./creneau";
+import {Motif} from "./motif";
+import {Consultation} from "./consultation";
 
 export class Praticien extends Utilisateur {
   matricule:string;
