@@ -15,9 +15,9 @@ const routes: Routes = [
   {path: "app-patient-rdv-avenir", component: PatientRdvAVenirComponent},
   {path: "praticien-infos", component: PraticienInfosPersoComponent},
   {path: "accueil", component: AccueilComponent},
-  {path: "", redirectTo: "accueil", pathMatch: "full"}
+  {path: "", redirectTo: "accueil", pathMatch: "full"},
   {path: "patient-info", component: PatientInfoService},
-  {path: "administrator", component: AdministrateurService}
+  {path: "administrator", component: AdministrateurService},
   {path: "motif", component: MotifComponent},
   {path: "lieu", component: LieuComponent},
 

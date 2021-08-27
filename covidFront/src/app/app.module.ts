@@ -15,6 +15,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +23,9 @@ import { LieuComponent } from './lieu/lieu.component';
     PatientRdvAVenirComponent,
     PatientComponent,
     PraticienInfosPersoComponent,
-    AccueilComponent
-    AdministrateurComponent
+    AccueilComponent,
+    AppComponent,
+    MotifComponent,
     LieuComponent
     MotifComponent,
   ],
