@@ -18,9 +18,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import sopra.formation.model.Formateur;
-import sopra.formation.model.Views;
 import sopra.monRdv.model.Consultation;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IConsultationRepository;
 
 @RestController

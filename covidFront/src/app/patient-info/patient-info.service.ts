@@ -26,7 +26,7 @@ export class PatientInfoService {
   }
 
   modify(patient: Patient) {
-    this.http.put<Patient>(this.appConfigService.backEndUrl + "patient/" + patient.id, patient).subscribe(response => {
+    this.http.put<Patient>(this.appConfigService.backEndUrl + "patient/info/" + patient.id, patient).subscribe(response => {
       this.load();
     }, error => console.log(error));
   }
@@ -36,7 +36,7 @@ export class PatientInfoService {
   }
 
   load() {
-    this.http.get<Array<Patient>>(this.appConfigService.backEndUrl + "evaluation/").subscribe(response => {
+    this.http.get<Array<Patient>>(this.appConfigService.backEndUrl + "patient/info/").subscribe(response => {
       this.patients = response;
     }, error => console.log(error));
   }

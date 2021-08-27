@@ -20,7 +20,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
     PatientRdvAVenirComponent,
     PatientComponent,
     PraticienInfosPersoComponent,
-    AccueilComponent
+    AccueilComponent,
     AdministrateurComponent
   ],
   imports: [
