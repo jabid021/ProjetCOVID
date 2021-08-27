@@ -15,6 +15,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
 import { BooleanOuiPipe } from './boolean-oui.pipe';
+import {TyperdvPipe} from "./typerdv.pipe";
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { BooleanOuiPipe } from './boolean-oui.pipe';
     LieuComponent,
     AccueilComponent,
     AdministrateurComponent,
-    BooleanOuiPipe
+    BooleanOuiPipe,
+    TyperdvPipe,
+    PatientInfoComponent
   ],
   imports: [
     BrowserModule,
