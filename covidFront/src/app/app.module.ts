@@ -28,7 +28,10 @@ import {TyperdvPipe} from "./typerdv.pipe";
     MotifComponent,
     LieuComponent,
     AccueilComponent,
-    AdministrateurComponent
+    AdministrateurComponent,
+    BooleanOuiPipe,
+    TyperdvPipe,
+    PatientInfoComponent
   ],
   imports: [
     BrowserModule,
