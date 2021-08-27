@@ -34,7 +34,7 @@ public abstract class Utilisateur {
 	@JsonView(Views.ViewCommon.class)
 	private String motDePasse;
 	@Embedded
-	@JsonView(Views.ViewCommon.class)
+	@JsonView(Views.ViewUtilisateur.class)
 	private Adresse adresse;
 
 	public Utilisateur() {

@@ -12,4 +12,6 @@ public class Views {
 	public static class ViewLieu extends ViewCommon {}
 	
 	public static class ViewMotif extends ViewCommon {}
+	
+	public static class ViewAdmin extends ViewUtilisateur {}
 }
