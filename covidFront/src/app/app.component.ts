@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'covidFront';
-  type:string="Praticien";
+  type:string="";
   connected:boolean=false;
 
 }

@@ -54,6 +54,7 @@ public class PraticienRestController {
 	}
 
 	@PostMapping("")
+	@JsonView(Views.ViewPraticien.class)
 	public Praticien create(@RequestBody Praticien praticien) {
 		praticien = utilisateurRepo.save(praticien);
 

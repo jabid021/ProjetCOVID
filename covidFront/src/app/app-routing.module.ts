@@ -5,7 +5,7 @@ import {AccueilComponent} from "./accueil/accueil.component";
 
 const routes: Routes = [
   {path: "praticien-infos", component: PraticienInfosPersoComponent},
-  {path: "acceuil", component: AccueilComponent},
+  {path: "accueil", component: AccueilComponent},
   {path: "", redirectTo: "accueil", pathMatch: "full"}
 ];
 

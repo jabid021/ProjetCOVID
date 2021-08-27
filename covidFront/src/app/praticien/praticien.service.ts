@@ -10,10 +10,9 @@ import {AccueilComponent} from "../accueil/accueil.component";
 })
 export class PraticienService {
   praticiens: Array<Praticien> = new Array<Praticien>();
-  recherche:string;
   chemin: string;
-  constructor(private http : HttpClient,private appconfig:AppConfigService, private acceuilComponent:AccueilComponent) {
-    this.recherche = this.acceuilComponent.recherche;
+
+  constructor(private http : HttpClient,private appconfig:AppConfigService) {
     this.chemin = this.appconfig.backEndUrl + "praticien/";
   }
 
@@ -25,17 +24,9 @@ export class PraticienService {
     return this.http.get<Praticien>(this.chemin + id+"/with-specialite");
   }
 
-  findAllPraticienWithSpecialites(): Array<Praticien> {
-    let temp: Array<Praticien> = new Array<Praticien>();
+  findAllPraticienWithSpecialites() {
     this.http.get<Array<Praticien>>(this.chemin +"with-specialites/").subscribe(response => {
       this.praticiens = response;
-      for (var indice = 0; indice < this.praticiens.length; indice++) {
-        if (this.praticiens[indice].nom == this.recherche) {
-          temp.push(this.praticiens[indice]);
-        }
-      }
-      this.praticiens = temp;
-      return this.praticiens;
     }, error => console.log(error));
   }
 
