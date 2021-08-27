@@ -41,6 +41,11 @@ public class PraticienRestController {
 		return utilisateurRepo.findAllPraticienWithSpecialites(id);
 	}
 
+	@GetMapping("/with-specialites")
+	public List<Praticien> findAllWithSpecialite() {
+		return utilisateurRepo.findAllPraticienWithSpecialite();
+	}
+	
 	@GetMapping("/{id}")
 	public Praticien find(@PathVariable Long id) {
 

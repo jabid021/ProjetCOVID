@@ -16,6 +16,9 @@ public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Long>
 	@Query("select p from Praticien p")
 	List<Praticien> findAllPraticien();
 	
+	@Query("select distinct p from Praticien p left join fetch p.specialites s")
+	List<Praticien> findAllPraticienWithSpecialite();
+	
 	@Query("select p from Patient p")
 	List<Patient> findAllPatient();
 	
