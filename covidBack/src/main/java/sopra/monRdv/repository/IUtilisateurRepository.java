@@ -16,6 +16,9 @@ public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Long>
 	@Query("select p from Praticien p")
 	List<Praticien> findAllPraticien();
 	
+	@Query("select distinct p from Praticien p left join fetch p.specialites s")
+	List<Praticien> findAllPraticienWithSpecialite();
+	
 	@Query("select p from Patient p")
 	List<Patient> findAllPatient();
 	
@@ -37,6 +40,6 @@ public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Long>
 	@Query("select u from Utilisateur u where u.email = :email and u.motDePasse = :motDePasse")
 	Optional<Utilisateur> findByEmailAndMotDePasse(@Param("email") String email, @Param("motDePasse") String motDePasse);
 	
-	@Query("select p from Praticien p left join fetch p.specialites spe")
-	List<Praticien> findAllPraticienWithSpecialites();
+	@Query("select p from Praticien p left join fetch p.specialites spe where p.id=:id")
+	Praticien findPraticienByIdWithSpecialites(@Param("id") Long id);
 }

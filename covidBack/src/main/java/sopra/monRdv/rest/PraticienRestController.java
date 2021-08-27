@@ -35,12 +35,17 @@ public class PraticienRestController {
 		return utilisateurRepo.findAllPraticien();
 	}
 	
-	@GetMapping("/with-specialites")
+	@GetMapping("/{id}/with-specialites")
 	@JsonView(Views.ViewPraticienWithSpecialites.class)
-	public List<Praticien> findAllPraticienWithSpecialites() {
-		return utilisateurRepo.findAllPraticienWithSpecialites();
+	public Praticien findByIdPraticienWithSpecialites(@PathVariable Long id) {
+		return utilisateurRepo.findPraticienByIdWithSpecialites(id);
 	}
 
+	@GetMapping("/with-specialites")
+	public List<Praticien> findAllWithSpecialite() {
+		return utilisateurRepo.findAllPraticienWithSpecialite();
+	}
+	
 	@GetMapping("/{id}")
 	public Praticien find(@PathVariable Long id) {
 

@@ -29,6 +29,8 @@ public class PraticienSpecialite {
 	@ManyToOne
 	@JoinColumn(name = "specialite_id")
 	@JsonView({Views.ViewPraticienSpecialite.class, Views.ViewPraticienWithSpecialites.class})
+	@JsonView(Views.ViewPraticienWithSpecialites.class)
+
 	private Specialite specialite;
 
 	public PraticienSpecialite() {
