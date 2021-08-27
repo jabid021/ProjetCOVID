@@ -4,6 +4,8 @@ import {PraticienInfosPersoComponent} from "./practicien-infos-perso/praticien-i
 import {AccueilComponent} from "./accueil/accueil.component";
 import {PatientRdvPasseComponent} from "./patient-rdv-passes/patient-rdv-passe.component";
 import {PatientRdvAVenirComponent} from "./patient-rdv-avenir/patient-rdv-avenir.component";
+import {LieuComponent} from "./lieu/lieu.component";
+import {MotifComponent} from "./motif/motif.component";
 
 let PatientRdvAVenirComponentComponent;
 const routes: Routes = [
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: "praticien-infos", component: PraticienInfosPersoComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "", redirectTo: "accueil", pathMatch: "full"}
+  {path: "motif", component: MotifComponent},
+  {path: "lieu", component: LieuComponent},
 
 ];
 

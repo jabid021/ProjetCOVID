@@ -10,6 +10,10 @@ import {PraticienInfosPersoComponent} from "./practicien-infos-perso/praticien-i
 import {HttpClientModule} from "@angular/common/http";
 import { AccueilComponent } from './accueil/accueil.component';
 import {FormsModule} from "@angular/forms";
+import { MotifComponent } from './motif/motif.component';
+import { LieuComponent } from './lieu/lieu.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,6 +23,9 @@ import {FormsModule} from "@angular/forms";
     PatientComponent,
     PraticienInfosPersoComponent,
     AccueilComponent
+    AppComponent,
+    MotifComponent,
+    LieuComponent
   ],
   imports: [
     BrowserModule,

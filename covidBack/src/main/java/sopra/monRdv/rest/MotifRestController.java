@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Motif;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IMotifRepository;
 
 @RestController
@@ -28,11 +31,13 @@ public class MotifRestController {
 	private IMotifRepository motifRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewMotif.class)
 	public List<Motif> findAll() {
 		return motifRepo.findAll();
 	}
 
 	@GetMapping("/{id}")
+	@JsonView(Views.ViewMotif.class)
 	public Motif find(@PathVariable Long id) {
 
 		Optional<Motif> optMotif = motifRepo.findById(id);
@@ -45,6 +50,7 @@ public class MotifRestController {
 	}
 
 	@PostMapping("")
+	@JsonView(Views.ViewMotif.class)
 	public Motif create(@RequestBody Motif motif) {
 		motif = motifRepo.save(motif);
 
@@ -52,6 +58,7 @@ public class MotifRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewMotif.class)
 	public Motif update(@RequestBody Motif motif, @PathVariable Long id) {
 		if (!motifRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
