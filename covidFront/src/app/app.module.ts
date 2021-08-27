@@ -10,6 +10,8 @@ import {PraticienInfosPersoComponent} from "./practicien-infos-perso/praticien-i
 import {HttpClientModule} from "@angular/common/http";
 import { AccueilComponent } from './accueil/accueil.component';
 import {FormsModule} from "@angular/forms";
+import { PatientInfoComponent } from './patient-info/patient-info.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
 import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
 
@@ -25,6 +27,7 @@ import { LieuComponent } from './lieu/lieu.component';
     AppComponent,
     MotifComponent,
     LieuComponent
+    MotifComponent,
   ],
   imports: [
     BrowserModule,
