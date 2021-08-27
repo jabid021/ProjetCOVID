@@ -10,7 +10,7 @@ import {Adresse} from "../model/adresse";
 })
 export class LieuComponent implements OnInit {
 
-  lieuForm: Lieu = null;
+  lieuForm: Lieu = new Lieu();
   check : boolean = false;
 
   constructor(private lieuService : LieuHttpService) { }
@@ -20,15 +20,16 @@ export class LieuComponent implements OnInit {
 
   checkVirtuel(event:any)
   {
-    if(event.checked) {this.lieuForm.virtuel = true}
-    else {this.lieuForm.virtuel = false}
+    if(event.checked) {this.check = false, this.lieuForm.virtuel = true}
+    else {this.check = true, this.lieuForm.virtuel = false}
     console.log(this.lieuForm);
   }
 
   checkPhysique(event:any)
   {
-    if(event.checked) {this.check = true}
-    else {this.check = false}
+    if(event.checked) {this.check = true, this.lieuForm.virtuel = false}
+    else {this.check = false, this.lieuForm.virtuel = true}
+    console.log(this.lieuForm);
   }
 
   add() {
@@ -51,11 +52,20 @@ export class LieuComponent implements OnInit {
     } else {
       this.lieuService.modify(this.lieuForm);
     }
-    this.lieuForm = null;
+    this.lieuForm = new Lieu();
   }
 
   cancel() {
-    this.lieuForm = null;
+    this.lieuForm = new Lieu();
   }
 
+  list(): Array<Lieu> {
+    return this.lieuService.findAll();
+  }
+
+  delete(id: number) {
+    this.lieuService.deleteById(id).subscribe(resp => {
+      this.lieuService.load();
+    }, error => console.log(error));
+  }
 }
