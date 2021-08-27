@@ -23,6 +23,7 @@ import { BooleanOuiPipe } from './boolean-oui.pipe';
     PatientRdvPasseComponent,
     PatientRdvAVenirComponent,
     PatientComponent,
+    PatientInfoComponent,
     PraticienInfosPersoComponent,
     MotifComponent,
     LieuComponent,
