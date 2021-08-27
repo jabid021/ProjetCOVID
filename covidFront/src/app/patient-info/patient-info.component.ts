@@ -3,26 +3,30 @@ import {Patient} from "../model/patient";
 import {PatientInfoService} from "./patient-info.service";
 
 @Component({
-  selector: 'app-patient-info',
+  selector: 'patient-info',
   templateUrl: './patient-info.component.html',
   styleUrls: ['./patient-info.component.scss']
 })
 export class PatientInfoComponent implements OnInit {
-patientInfoForm: Patient = null;
+
+  patient : Patient=new Patient();
+  patientInfoForm: Patient = null;
 
   constructor(private patientInfoService: PatientInfoService) {
 
   }
 
   ngOnInit(): void {
+    this.find(1);
   }
 
-  list(): Array<Patient> {
-    return this.patientInfoService.findAll();
-  }
-
-  add() {
-    this.patientInfoForm = new Patient();
+  find(id : number){
+    this.patientInfoService.findById(id).subscribe(response=>
+      {
+        this.patient=response;
+        console.log(this.patient);
+      },
+      error=>console.log(error));
   }
 
   edit(id: number) {
@@ -32,20 +36,7 @@ patientInfoForm: Patient = null;
   }
 
   save() {
-    if (this.patientInfoForm.id) {
       this.patientInfoService.modify(this.patientInfoForm);
-    } else {
-      this.patientInfoService.create(this.patientInfoForm);
-    }
-
-    this.patientInfoForm = null;
-  }
-
-  // pour l'exemple => mais de préférence coder le subscribe dans le service
-  delete(id: number) {
-    this.patientInfoService.deleteById(id).subscribe(resp => {
-      this.patientInfoService.load();
-    }, error => console.log(error));
   }
 
   cancel() {

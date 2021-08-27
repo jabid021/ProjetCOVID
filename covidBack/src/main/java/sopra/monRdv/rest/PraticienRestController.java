@@ -37,8 +37,8 @@ public class PraticienRestController {
 	
 	@GetMapping("/{id}/with-specialites")
 	@JsonView(Views.ViewPraticienWithSpecialites.class)
-	public List<Praticien> findByIdPraticienWithSpecialites(@PathVariable Long id) {
-		return utilisateurRepo.findAllPraticienWithSpecialites(id);
+	public Praticien findByIdPraticienWithSpecialites(@PathVariable Long id) {
+		return utilisateurRepo.findPraticienByIdWithSpecialites(id);
 	}
 
 	@GetMapping("/with-specialites")

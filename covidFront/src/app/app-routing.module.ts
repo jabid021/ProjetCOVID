@@ -8,6 +8,8 @@ import {PatientInfoService} from "./patient-info/patient-info.service";
 import {AdministrateurService} from "./administrateur/administrateur.service";
 import {LieuComponent} from "./lieu/lieu.component";
 import {MotifComponent} from "./motif/motif.component";
+import {PatientInfoComponent} from "./patient-info/patient-info.component";
+import {AdministrateurComponent} from "./administrateur/administrateur.component";
 
 let PatientRdvAVenirComponentComponent;
 
@@ -16,12 +18,12 @@ const routes: Routes = [
   {path: "app-patient-rdv-avenir", component: PatientRdvAVenirComponent},
   {path: "praticien-infos", component: PraticienInfosPersoComponent},
   {path: "accueil", component: AccueilComponent},
-  {path: "", redirectTo: "accueil", pathMatch: "full"},
   {path:"infos-praticien",component:PraticienInfosPersoComponent},
-  {path: "patient-info", component: PatientInfoService},
+  {path: "patient-info", component: PatientInfoComponent},
   {path: "motif", component: MotifComponent},
   {path: "lieu", component: LieuComponent},
-  {path: "administrator", component: AdministrateurService}
+  {path: "administrator", component: AdministrateurComponent},
+  {path: "", redirectTo: "accueil", pathMatch: "full"}
 ];
 
 @NgModule({
