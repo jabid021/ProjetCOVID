@@ -12,8 +12,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import {FormsModule} from "@angular/forms";
 import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -22,7 +21,7 @@ import {HttpClientModule} from "@angular/common/http";
     PatientRdvAVenirComponent,
     PatientComponent,
     PraticienInfosPersoComponent,
-    AccueilComponent
+    AccueilComponent,
     AppComponent,
     MotifComponent,
     LieuComponent
