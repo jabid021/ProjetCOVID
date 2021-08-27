@@ -10,6 +10,8 @@ import {PraticienInfosPersoComponent} from "./practicien-infos-perso/praticien-i
 import {HttpClientModule} from "@angular/common/http";
 import { AccueilComponent } from './accueil/accueil.component';
 import {FormsModule} from "@angular/forms";
+import { PatientInfoComponent } from './patient-info/patient-info.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import {FormsModule} from "@angular/forms";
     PatientComponent,
     PraticienInfosPersoComponent,
     AccueilComponent
+    AdministrateurComponent
   ],
   imports: [
     BrowserModule,

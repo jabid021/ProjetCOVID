@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Administrateur;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IUtilisateurRepository;
 
 @RestController
@@ -28,11 +31,13 @@ public class AdministateurRestController {
 	private IUtilisateurRepository utilisateurRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewAdmin.class)
 	public List<Administrateur> findAll() {
 		return utilisateurRepo.findAllAdministrateur();
 	}
 
 	@GetMapping("/{id}")
+	@JsonView(Views.ViewAdmin.class)
 	public Administrateur find(@PathVariable Long id) {
 
 		Optional<Administrateur> optAdministrateur = utilisateurRepo.findAdministrateurById(id);
@@ -45,6 +50,7 @@ public class AdministateurRestController {
 	}
 
 	@PostMapping("")
+	@JsonView(Views.ViewAdmin.class)
 	public Administrateur create(@RequestBody Administrateur administrateur) {
 		administrateur = utilisateurRepo.save(administrateur);
 
@@ -52,6 +58,7 @@ public class AdministateurRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewAdmin.class)
 	public Administrateur update(@RequestBody Administrateur administrateur, @PathVariable Long id) {
 		if (!utilisateurRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
