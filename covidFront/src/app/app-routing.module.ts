@@ -8,21 +8,20 @@ import {PatientInfoService} from "./patient-info/patient-info.service";
 import {AdministrateurService} from "./administrateur/administrateur.service";
 
 let PatientRdvAVenirComponentComponent;
+
 const routes: Routes = [
   {path: "app-patient-rdv-passes", component: PatientRdvPasseComponent},
   {path: "app-patient-rdv-avenir", component: PatientRdvAVenirComponent},
   {path: "praticien-infos", component: PraticienInfosPersoComponent},
   {path: "accueil", component: AccueilComponent},
-  {path: "", redirectTo: "accueil", pathMatch: "full"}
-const routes: Routes = [
+  {path: "", redirectTo: "accueil", pathMatch: "full"},
   {path: "patient-info", component: PatientInfoService},
   {path: "administrator", component: AdministrateurService}
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
