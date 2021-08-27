@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: "praticien-infos", component: PraticienInfosPersoComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "", redirectTo: "accueil", pathMatch: "full"},
+  {path:"infos-praticien",component:PraticienInfosPersoComponent},
   {path: "patient-info", component: PatientInfoService},
   {path: "administrator", component: AdministrateurService},
   {path: "motif", component: MotifComponent},

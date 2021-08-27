@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Praticien} from "../model/praticien";
 import {Observable} from "rxjs";
 import {AccueilComponent} from "../accueil/accueil.component";
+import {Specialite} from "../model/specialite";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,11 @@ export class PraticienService {
   }
 
   findById(id: number): Observable<Praticien> {
-    return this.http.get<Praticien>(this.chemin + id+"/with-specialite");
+  return this.http.get<Praticien>(this.chemin+id);
+  }
+
+  findSpecialitesByIdPraticien(id: number): Observable<Array<Specialite>> {
+    return this.http.get<Array<Specialite>>(this.appconfig.backEndUrl+"specialite");
   }
 
   findAllPraticienWithSpecialites() {

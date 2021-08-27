@@ -28,6 +28,7 @@ import { LieuComponent } from './lieu/lieu.component';
     MotifComponent,
     LieuComponent
     MotifComponent,
+    AdministrateurComponent
   ],
   imports: [
     BrowserModule,
