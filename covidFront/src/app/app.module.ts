@@ -8,6 +8,7 @@ import { PatientRdvAVenirComponent } from './patient-rdv-avenir/patient-rdv-aven
 import { PatientComponent } from './patient/patient.component';
 import {PraticienInfosPersoComponent} from "./practicien-infos-perso/praticien-infos-perso.component";
 import {HttpClientModule} from "@angular/common/http";
+import { AccueilComponent } from './accueil/accueil.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -17,12 +18,13 @@ import {FormsModule} from "@angular/forms";
     PatientRdvAVenirComponent,
     PatientComponent,
     PraticienInfosPersoComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
