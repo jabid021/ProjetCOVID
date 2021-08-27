@@ -5,6 +5,7 @@ import {Motif} from "./motif";
 import {Consultation} from "./consultation";
 import {Adresse} from "./adresse";
 import {Specialite} from "./specialite";
+import {PraticienSpecialite} from "./praticienSpecialite";
 
 export class Praticien extends Utilisateur {
   matricule:string;
@@ -16,14 +17,14 @@ export class Praticien extends Utilisateur {
   cheque:boolean;
   espece:boolean;
   dureeCreneau:number;
-  specialites:Array<Specialite>;
+  specialites:Array<PraticienSpecialite>;
   lieux:Array<Lieu>;
   creneaux:Array<Creneau>;
   motifs:Array<Motif>;
   consultations:Array<Consultation>;
 
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string,adresse?:Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string, carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number, specialites?: Array<Specialite>, lieux?: Array<Lieu>, creneaux?: Array<Creneau>, motifs?: Array<Motif>, consultations?: Array<Consultation>) {
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string,adresse?:Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string, carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number, specialites?: Array<PraticienSpecialite>, lieux?: Array<Lieu>, creneaux?: Array<Creneau>, motifs?: Array<Motif>, consultations?: Array<Consultation>) {
     super(id, version, nom, prenom, email, motDePasse,adresse);
     this.matricule = matricule;
     this.telephone = telephone;

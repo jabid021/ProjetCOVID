@@ -9,7 +9,7 @@
   Matricule : {{praticien.matricule}}<br>
   Telephone : {{praticien.telephone}}<br>
 </div>
-   <div class="col-4">
+   <div class="col-3">
      <h4>Complements RDV : </h4>
      Convention : {{praticien.convention}}<br>
      carteVitale : {{praticien.carteVitale | booleanOui}}<br>
@@ -17,10 +17,10 @@
      Cheque : {{praticien.cheque | booleanOui}}<br>
      Espece : {{praticien.espece  | booleanOui}}<br>
      duree : {{praticien.dureeCreneau}} minutes<br></div>
-    <div class="col-2">
+    <div class="col-3">
       <h4>Liste des spécialités :</h4>
       <ul *ngFor="let s of praticien.specialites">
-          <ul>{{s.nom}}</ul>
+          <li>{{s.specialite.nom}} - {{s.specialite.description}}</li>
       </ul>
 
     </div>
