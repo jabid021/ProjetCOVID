@@ -38,12 +38,6 @@ export class LieuComponent implements OnInit {
   }
 
   edit(id: number) {
-    if (this.lieuForm.virtuel= true)
-    {document.querySelector('input[name="virtual"]:checked')}
-    // {document.getElementById("virtual").checked = true;}
-    else
-    {document.querySelector('input[name="physic"]:checked')}
-    // {document.getElementById("physic").check = true}
     this.lieuService.findById(id).subscribe(resp => {
       this.lieuForm = resp;
       this.check = !this.lieuForm.virtuel;
