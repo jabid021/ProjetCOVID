@@ -42,6 +42,7 @@ public class PraticienRestController {
 	}
 
 	@GetMapping("/with-specialites")
+	@JsonView(Views.ViewPraticienWithSpecialites.class)
 	public List<Praticien> findAllWithSpecialite() {
 		return utilisateurRepo.findAllPraticienWithSpecialite();
 	}

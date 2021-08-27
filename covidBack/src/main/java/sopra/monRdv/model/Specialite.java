@@ -17,15 +17,12 @@ public class Specialite {
 	@Id
 	@GeneratedValue
 	@JsonView(Views.ViewCommon.class)
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
 	private Long id;
 	@Version
 	@JsonView(Views.ViewCommon.class)
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
 	private int version;
 	@Column(length = 100)
 	@JsonView(Views.ViewCommon.class)
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
 	private String nom;
 	@Column(length = 255)
 	@JsonView(Views.ViewCommon.class)

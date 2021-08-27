@@ -21,7 +21,7 @@
         <td>{{praticien.telephone}}</td>
         <td>
           <div class="btn-group btn-group-sm">
-            <a class="btn btn-success">
+            <a class="btn btn-success" [routerLink]="['/praticien-infos/'+praticien.id]">
               <i class="fa fa-check"></i>
             </a>
           </div>

@@ -25,7 +25,7 @@ export class AccueilComponent implements OnInit {
     console.log(this.praticienService.praticiens);
     if(this.recherche) {
       console.log("recherche="+this.recherche);
-      return this.praticienService.praticiens.filter(p => p.nom.indexOf(this.recherche) != -1 || (p.specialites.findIndex(s => s.specialite.nom && s.nom.indexOf(this.recherche) != -1) != -1))
+      return this.praticienService.praticiens.filter(p => p.nom.indexOf(this.recherche) != -1 || (p.specialites.findIndex(s => s.specialite.nom && s.specialite.nom.indexOf(this.recherche) != -1) != -1))
     }
 
     console.log("pas recherche");

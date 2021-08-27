@@ -21,8 +21,6 @@ public class Views {
 	
 	public static class ViewConsultationWithPatient extends ViewConsultation {}
 
-	public static class ViewConsultation extends ViewCommon {}
-	
 	public static class ViewSpecialite extends ViewCommon {}
 	
 	public static class ViewPraticienSpecialite extends ViewCommon {}
