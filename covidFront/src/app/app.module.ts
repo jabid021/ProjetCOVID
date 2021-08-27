@@ -26,7 +26,7 @@ import { LieuComponent } from './lieu/lieu.component';
     AccueilComponent,
     AppComponent,
     MotifComponent,
-    LieuComponent
+    LieuComponent,
     MotifComponent,
     AdministrateurComponent
   ],
