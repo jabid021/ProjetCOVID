@@ -24,27 +24,9 @@ export class PraticienInfosPersoComponent implements OnInit {
   }
 
   find(id:number)  {
-    this.praticienService.findById(id).subscribe(response=>
+    this.praticienService.findByIdWithSpecialites(id).subscribe(response=>
       {
         this.praticien=response;
-        console.log(this.praticien);
-        if(this.praticien.adresse==null)
-        {
-          this.praticien.adresse=new Adresse();
-        }
-
-        this.praticienService.findSpecialitesByIdPraticien(id).subscribe(response=>
-          {
-            this.praticien.specialites=response;
-            if(this.praticien.adresse==null)
-            {
-              this.praticien.adresse=new Adresse();
-            }
-            console.log(response);
-          },
-          error=>console.log(error));
-
-        console.log(this.praticien);
       },
       error=>console.log(error));
   }

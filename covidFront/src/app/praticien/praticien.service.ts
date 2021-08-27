@@ -21,8 +21,12 @@ export class PraticienService {
     return this.praticiens;
   }
 
+  findByIdWithSpecialites(id: number): Observable<Praticien> {
+  return this.http.get<Praticien>(this.chemin+id+"/with-specialites");
+  }
+
   findById(id: number): Observable<Praticien> {
-  return this.http.get<Praticien>(this.chemin+id);
+    return this.http.get<Praticien>(this.chemin+id);
   }
 
   findSpecialitesByIdPraticien(id: number): Observable<Array<Specialite>> {
