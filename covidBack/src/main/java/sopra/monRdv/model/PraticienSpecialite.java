@@ -17,8 +17,10 @@ import com.fasterxml.jackson.annotation.JsonView;
 public class PraticienSpecialite {
 	@Id
 	@GeneratedValue
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	@Version
+	@JsonView(Views.ViewCommon.class)
 	private int version;
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
