@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Convention;
 import sopra.monRdv.model.Statut;
 import sopra.monRdv.model.Utilisateur;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IUtilisateurRepository;
 import sopra.monRdv.rest.dto.UserDTO;
 
@@ -25,6 +28,7 @@ public class CommonRestController {
 	private IUtilisateurRepository utilisateurRepo;
 
 	@PostMapping("/authentification")
+	@JsonView(Views.ViewConnexion.class)
 	public UserDTO utilisateur(@RequestBody UserDTO userDto) {
 		Optional<Utilisateur> utilisateur = utilisateurRepo.findByEmailAndMotDePasse(userDto.getLogin(),
 				userDto.getPassword());

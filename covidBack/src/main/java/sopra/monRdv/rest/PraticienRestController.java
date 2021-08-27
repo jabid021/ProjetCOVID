@@ -42,6 +42,7 @@ public class PraticienRestController {
 	}
 
 	@GetMapping("/with-specialites")
+	@JsonView(Views.ViewPraticienWithSpecialites.class)
 	public List<Praticien> findAllWithSpecialite() {
 		return utilisateurRepo.findAllPraticienWithSpecialite();
 	}
@@ -67,6 +68,7 @@ public class PraticienRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewPraticien.class)
 	public Praticien update(@RequestBody Praticien praticien, @PathVariable Long id) {
 		if (!utilisateurRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");

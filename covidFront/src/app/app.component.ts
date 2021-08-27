@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SessionService} from "./session.service";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'covidFront';
-  type:string="";
   connected:boolean=false;
 
+
+  constructor(private sessionService: SessionService) {
+  }
+
+  isConnected(): boolean {
+    return this.sessionService.user != null;
+  }
+
+  isType(type:string): boolean {
+    return this.sessionService.type == type;
+  }
+
+  getType(): string {
+    return this.sessionService.type;
+  }
 }

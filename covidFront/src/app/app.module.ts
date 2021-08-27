@@ -16,7 +16,7 @@ import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
 import { BooleanOuiPipe } from './boolean-oui.pipe';
 import {TyperdvPipe} from "./typerdv.pipe";
-
+import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import {TyperdvPipe} from "./typerdv.pipe";
     AdministrateurComponent,
     BooleanOuiPipe,
     TyperdvPipe,
-    PatientInfoComponent
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,

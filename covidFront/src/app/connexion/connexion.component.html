@@ -1,0 +1,7 @@
+<div>
+  Login: <input type="text" [(ngModel)]="userForm.login">
+  Password : <input type="text" [(ngModel)]="userForm.password">
+</div>
+<a class="btn btn-success" (click)="connexion()" [routerLink]="['/accueil']">
+  <i class="fa fa-check"></i>
+</a>

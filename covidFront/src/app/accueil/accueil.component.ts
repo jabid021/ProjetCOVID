@@ -21,14 +21,14 @@ export class AccueilComponent implements OnInit {
     this.praticienService.findAllPraticienWithSpecialites();
   }
 
-  list(): Array<Praticien> {
-    let temp: Array<Praticien> = new Array<Praticien>();
-    for (var indice = 0; indice < this.praticienService.praticiens.length; indice++) {
-      if (this.praticienService.praticiens[indice].nom == this.recherche || this.recherche in this.praticienService.praticiens[indice].specialites) {
-        temp.push(this.praticienService.praticiens[indice]);
-      }
+  listBis(): Array<Praticien> {
+    console.log(this.praticienService.praticiens);
+    if(this.recherche) {
+      console.log("recherche="+this.recherche);
+      return this.praticienService.praticiens.filter(p => p.nom.indexOf(this.recherche) != -1 || (p.specialites.findIndex(s => s.specialite.nom && s.specialite.nom.indexOf(this.recherche) != -1) != -1))
     }
-    this.praticienService.praticiens = temp;
+
+    console.log("pas recherche");
     return this.praticienService.praticiens;
   }
 

@@ -16,16 +16,16 @@ import com.fasterxml.jackson.annotation.JsonView;
 public class Specialite {
 	@Id
 	@GeneratedValue
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	@Version
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
+	@JsonView(Views.ViewCommon.class)
 	private int version;
 	@Column(length = 100)
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
+	@JsonView(Views.ViewCommon.class)
 	private String nom;
 	@Column(length = 255)
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
+	@JsonView(Views.ViewCommon.class)
 	private String description;
 	
 	@OneToMany(mappedBy = "specialite")

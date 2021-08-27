@@ -4,6 +4,8 @@ import {PraticienService} from "../praticien/praticien.service";
 import {Adresse} from "../model/adresse";
 import {Specialite} from "../model/specialite";
 import {Observable} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
+import {map} from "rxjs/operators";
 
 
 @Component({
@@ -15,12 +17,15 @@ export class PraticienInfosPersoComponent implements OnInit {
 
   praticien: Praticien=new Praticien();
   praticienForm: Praticien = null;
-  constructor(private praticienService: PraticienService) {
-
+  id:number;
+  constructor(private route: ActivatedRoute, private praticienService: PraticienService) {
   }
 
   ngOnInit(): void {
-    this.find(1);
+    this.route.params.subscribe(params => {
+      this.id = params.id;
+      this.find(this.id);
+    });
   }
 
   find(id:number)  {
