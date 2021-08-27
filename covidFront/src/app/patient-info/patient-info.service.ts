@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Patient} from "../model/patient";
 import {AppConfigService} from "../app-config.service";
 import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {Observable} from "rxjs";
 export class PatientInfoService {
   patients: Array<Patient> = new Array<Patient>();
 
-  constructor(private http: Patient, private appConfigService: AppConfigService) { this.load();}
+  constructor(private http: HttpClient, private appConfigService: AppConfigService) { this.load();}
 
   findAll(): Array<Patient> {
     return this.patients;
@@ -26,7 +27,7 @@ export class PatientInfoService {
   }
 
   modify(patient: Patient) {
-    this.http.put<Patient>(this.appConfigService.backEndUrl + "patient/" + patient.id, patient).subscribe(response => {
+    this.http.put<Patient>(this.appConfigService.backEndUrl + "patient/info/" + patient.id, patient).subscribe(response => {
       this.load();
     }, error => console.log(error));
   }
@@ -36,7 +37,7 @@ export class PatientInfoService {
   }
 
   load() {
-    this.http.get<Array<Patient>>(this.appConfigService.backEndUrl + "evaluation/").subscribe(response => {
+    this.http.get<Array<Patient>>(this.appConfigService.backEndUrl + "patient/info/").subscribe(response => {
       this.patients = response;
     }, error => console.log(error));
   }
