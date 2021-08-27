@@ -12,6 +12,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import {FormsModule} from "@angular/forms";
 import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { MotifComponent } from './motif/motif.component';
+import { LieuComponent } from './lieu/lieu.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +24,10 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
     PatientComponent,
     PraticienInfosPersoComponent,
     AccueilComponent,
+    AppComponent,
+    MotifComponent,
+    LieuComponent
+    MotifComponent,
     AdministrateurComponent
   ],
   imports: [
