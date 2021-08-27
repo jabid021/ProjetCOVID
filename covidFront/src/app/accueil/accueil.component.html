@@ -1,0 +1,33 @@
+<div>
+  Recherche : <input type="text" [(ngModel)]="recherche">
+</div>
+<div class="card mt-3">
+  <div class="card-header bg-info text-white">
+    <h2>Voici les praticiens disponibles</h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>telephone</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let praticien of list()">
+        <td>{{praticien.nom}}</td>
+        <td>{{praticien.prenom}}</td>
+        <td>{{praticien.telephone}}</td>
+        <td>
+          <div class="btn-group btn-group-sm">
+            <a class="btn btn-success">
+              <i class="fa fa-check"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>

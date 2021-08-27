@@ -3,14 +3,35 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PatientRdvPasseComponent } from './patient-rdv-passes/patient-rdv-passe.component';
+import { PatientRdvAVenirComponent } from './patient-rdv-avenir/patient-rdv-avenir.component';
+import { PatientComponent } from './patient/patient.component';
+import {PraticienInfosPersoComponent} from "./practicien-infos-perso/praticien-infos-perso.component";
+import {HttpClientModule} from "@angular/common/http";
+import { AccueilComponent } from './accueil/accueil.component';
+import {FormsModule} from "@angular/forms";
+import { MotifComponent } from './motif/motif.component';
+import { LieuComponent } from './lieu/lieu.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PatientRdvPasseComponent,
+    PatientRdvAVenirComponent,
+    PatientComponent,
+    PraticienInfosPersoComponent,
+    AccueilComponent
+    AppComponent,
+    MotifComponent,
+    LieuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
