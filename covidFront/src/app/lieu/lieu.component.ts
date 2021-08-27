@@ -40,6 +40,7 @@ export class LieuComponent implements OnInit {
   edit(id: number) {
     this.lieuService.findById(id).subscribe(resp => {
       this.lieuForm = resp;
+      this.check = !this.lieuForm.virtuel;
       if (!this.lieuForm.adr) {
         this.lieuForm.adr = new Adresse();
       }

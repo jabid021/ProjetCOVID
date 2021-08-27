@@ -16,7 +16,7 @@
       <td>{{lieu.adr?.rue}} {{lieu.adr?.complement}}  {{lieu.adr?.codePostal}} {{lieu.adr?.ville}}</td>
       <td>
         <div class="btn-group btn-group-sm">
-        <a class="btn btn-primary" (click)="edit(lieu.id)"><i class="fa fa-edit"></i></a>
+        <a type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo"(click)="edit(lieu.id)" ><i class="fa fa-edit"></i></a>
         <a class="btn btn-danger" (click)="delete(lieu.id)"><i class="fa fa-trash"></i></a>
         </div>
       </td>
@@ -34,13 +34,13 @@
             <input type="text" class="form-control" id="nom" [(ngModel)]="lieuForm.nom">
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" value="" id="virtual" name="radio" (change)="checkVirtuel($event.target)">
+        <input class="form-check-input" type="radio" value="" id="virtual" name="radio" (change)="checkVirtuel($event.target)" [checked]="lieuForm.virtuel">
         <label class="form-check-label" for="virtual">
           Virtuel
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" value="" id="physic" name="radio" (change)="checkPhysique($event.target)">
+        <input class="form-check-input" type="radio" value="" id="physic" name="radio" (change)="checkPhysique($event.target)" [checked]="!lieuForm.virtuel">
         <label class="form-check-label" for="physic">
           Physique
         </label>
