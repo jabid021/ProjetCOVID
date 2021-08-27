@@ -41,5 +41,5 @@ public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Long>
 	Optional<Utilisateur> findByEmailAndMotDePasse(@Param("email") String email, @Param("motDePasse") String motDePasse);
 	
 	@Query("select p from Praticien p left join fetch p.specialites spe where p.id=:id")
-	List<Praticien> findAllPraticienWithSpecialites(@Param("id") Long id);
+	Praticien findPraticienByIdWithSpecialites(@Param("id") Long id);
 }

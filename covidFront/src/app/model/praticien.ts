@@ -15,7 +15,7 @@ export class Praticien extends Utilisateur {
   cb:boolean;
   cheque:boolean;
   espece:boolean;
-  dureeCrenau:number;
+  dureeCreneau:number;
   specialites:Array<Specialite>;
   lieux:Array<Lieu>;
   creneaux:Array<Creneau>;
@@ -23,7 +23,7 @@ export class Praticien extends Utilisateur {
   consultations:Array<Consultation>;
 
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string,adresse?:Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string, carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCrenau?: number, specialites?: Array<Specialite>, lieux?: Array<Lieu>, creneaux?: Array<Creneau>, motifs?: Array<Motif>, consultations?: Array<Consultation>) {
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string,adresse?:Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string, carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number, specialites?: Array<Specialite>, lieux?: Array<Lieu>, creneaux?: Array<Creneau>, motifs?: Array<Motif>, consultations?: Array<Consultation>) {
     super(id, version, nom, prenom, email, motDePasse,adresse);
     this.matricule = matricule;
     this.telephone = telephone;
@@ -33,7 +33,7 @@ export class Praticien extends Utilisateur {
     this.cb = cb;
     this.cheque = cheque;
     this.espece = espece;
-    this.dureeCrenau = dureeCrenau;
+    this.dureeCreneau = dureeCreneau;
     this.specialites = specialites;
     this.lieux = lieux;
     this.creneaux = creneaux;

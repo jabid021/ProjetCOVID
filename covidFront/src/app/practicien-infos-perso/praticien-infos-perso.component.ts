@@ -27,12 +27,13 @@ export class PraticienInfosPersoComponent implements OnInit {
     this.praticienService.findByIdWithSpecialites(id).subscribe(response=>
       {
         this.praticien=response;
+        console.log(this.praticien);
       },
       error=>console.log(error));
   }
 
   edit() {
-       this.praticienForm=new Praticien(this.praticien.id,this.praticien.version,this.praticien.nom,this.praticien.prenom,this.praticien.email,this.praticien.motDePasse, this.praticien.adresse,this.praticien.matricule,this.praticien.telephone,this.praticien.photo,this.praticien.convention,this.praticien.carteVitale,this.praticien.cb,this.praticien.cheque, this.praticien.espece,this.praticien.dureeCrenau,this.praticien.specialites,this.praticien.lieux,this.praticien.creneaux,this.praticien.motifs);
+       this.praticienForm=new Praticien(this.praticien.id,this.praticien.version,this.praticien.nom,this.praticien.prenom,this.praticien.email,this.praticien.motDePasse, this.praticien.adresse,this.praticien.matricule,this.praticien.telephone,this.praticien.photo,this.praticien.convention,this.praticien.carteVitale,this.praticien.cb,this.praticien.cheque, this.praticien.espece,this.praticien.dureeCreneau,this.praticien.specialites,this.praticien.lieux,this.praticien.creneaux,this.praticien.motifs);
         if(this.praticienForm.adresse==null) {
           this.praticienForm.adresse = new Adresse();
         }
