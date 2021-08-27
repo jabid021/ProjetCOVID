@@ -14,6 +14,7 @@ import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { AdministrateurComponent } from './administrateur/administrateur.component';
 import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
+import { BooleanOuiPipe } from './boolean-oui.pipe';
 import {TyperdvPipe} from "./typerdv.pipe";
 
 
@@ -23,12 +24,15 @@ import {TyperdvPipe} from "./typerdv.pipe";
     PatientRdvPasseComponent,
     PatientRdvAVenirComponent,
     PatientComponent,
+    PatientInfoComponent,
     PraticienInfosPersoComponent,
     MotifComponent,
     LieuComponent,
     AccueilComponent,
     AdministrateurComponent,
-    TyperdvPipe
+    BooleanOuiPipe,
+    TyperdvPipe,
+    PatientInfoComponent
   ],
   imports: [
     BrowserModule,

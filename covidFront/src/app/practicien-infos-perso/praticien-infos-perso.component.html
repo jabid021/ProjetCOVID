@@ -1,49 +1,68 @@
-<div class="container">
+<div class="container-fluid praticien-infos">
 
   <div class="row">
+    <div class="col-2"><img src="../../assets/img/praticien/{{praticien.photo}}" width="150"></div>
+<div class="col-4">
+  <h4>Vos Infos :</h4>
+  Nom : {{praticien.nom}} <br>
+  Prenom : {{praticien.prenom}} <br>
+  Matricule : {{praticien.matricule}}<br>
+  Telephone : {{praticien.telephone}}<br>
+</div>
+   <div class="col-3">
+     <h4>Complements RDV : </h4>
+     Convention : {{praticien.convention}}<br>
+     carteVitale : {{praticien.carteVitale | booleanOui}}<br>
+     CB : {{praticien.cb | booleanOui}}<br>
+     Cheque : {{praticien.cheque | booleanOui}}<br>
+     Espece : {{praticien.espece  | booleanOui}}<br>
+     duree : {{praticien.dureeCreneau}} minutes<br></div>
+    <div class="col-3">
+      <h4>Liste des spécialités :</h4>
+      <ul *ngFor="let s of praticien.specialites">
+          <li>{{s.specialite.nom}} - {{s.specialite.description}}</li>
+      </ul>
+
+    </div>
 
 
-  Matricule : {{praticien.nom}}<br>
-   Telephone : {{praticien.telephone}}<br>
-   Photo : {{praticien.photo}}<br>
-   Convention : {{praticien.convention}}<br>
-   carteVitale : {{praticien.carteVitale}}<br>
-   cb : {{praticien.cb}}<br>
-   cheque : {{praticien.cheque}}<br>
-   Espece : {{praticien.espece}}<br>
-    duree : {{praticien.dureeCrenau}}<br>
 
 
+<div class="col-12"><input class="btnUpdate" type="button" (click)="edit()" value="Modifer"></div><br><br><br>
+    <div class="col-12">
+
+
+      <div class="card mt-3" *ngIf="praticienForm">
+        <div class="card-header bg-info text-white">
+          <h3>Edition du Praticien</h3>
+        </div>
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" [(ngModel)]="praticienForm.nom">
+          </div>
+        </div>
+
+
+        <div class="card-footer">
+          <div class="btn-group btn-group-lg float-right">
+            <a class="btn btn-success" (click)="save()">
+              <i class="fa fa-check"></i>
+            </a>
+            <a class="btn btn-warning" (click)="cancel()">
+              <i class="fa fa-sync"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-<input type="button" (click)="edit()" value="Modifer">
 
 
-  <div class="card mt-3" *ngIf="praticienForm">
-    <div class="card-header bg-info text-white">
-      <h3>Edition du Praticien</h3>
-    </div>
-
-    <div class="card-body">
-
-      <div class="form-group">
-        <label for="nom">Nom :</label>
-        <input type="text" class="form-control" id="nom" [(ngModel)]="praticienForm.nom">
-      </div>
-    </div>
-
-
-    <div class="card-footer">
-      <div class="btn-group btn-group-lg float-right">
-        <a class="btn btn-success" (click)="save()">
-          <i class="fa fa-check"></i>
-        </a>
-        <a class="btn btn-warning" (click)="cancel()">
-          <i class="fa fa-sync"></i>
-        </a>
-      </div>
-    </div>
-  </div>
 
 
 </div>

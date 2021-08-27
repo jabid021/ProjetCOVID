@@ -9,6 +9,8 @@ public class Views {
 	
 	public static class ViewPraticien extends ViewUtilisateur {}
 	
+	public static class ViewConsultation extends ViewPraticien {}
+	
 	public static class ViewPraticienWithSpecialites extends ViewPraticien {}
 	
 	public static class ViewLieu extends ViewCommon {}
@@ -19,5 +21,5 @@ public class Views {
 	
 	public static class ViewConsultationWithPatient extends ViewConsultation {}
 
-	public static class ViewConsultation extends ViewCommon {}
+	
 }
