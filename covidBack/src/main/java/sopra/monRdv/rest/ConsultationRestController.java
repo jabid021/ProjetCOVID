@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import sopra.formation.model.Formateur;
+import sopra.formation.model.Views;
 import sopra.monRdv.model.Consultation;
 import sopra.monRdv.repository.IConsultationRepository;
 
@@ -34,6 +38,19 @@ public class ConsultationRestController {
 
 	@GetMapping("/{id}")
 	public Consultation find(@PathVariable Long id) {
+
+		Optional<Consultation> optConsultation = consultationRepo.findById(id);
+
+		if (optConsultation.isPresent()) {
+			return optConsultation.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+	
+	@GetMapping("/{id}/with-ue")
+	@JsonView(Views.ViewConsultationWithPatient.class)
+	public Consultation findWithPatient(@PathVariable Long id) {
 
 		Optional<Consultation> optConsultation = consultationRepo.findById(id);
 

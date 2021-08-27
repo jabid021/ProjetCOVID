@@ -3,5 +3,5 @@ import {Praticien} from "./praticien";
 
 export class Motif
 {
-  constructor(id?:number,version?:number,libelle?:string,nbCreneau?:number,consultations?:Array<Consultation>,practicien?:Praticien) {}
+  constructor(public id?:number, public version?:number, public libelle?:string, public nbCreneau?:number, public consultations?:Array<Consultation>, public praticien?:Praticien) {}
 }

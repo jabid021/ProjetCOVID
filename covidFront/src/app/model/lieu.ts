@@ -5,5 +5,5 @@ import {Praticien} from "./praticien";
 
 export class Lieu
 {
-  constructor(id?:number,version?:number,nom?:string,virtuel?:boolean,adr?:Adresse,praticien?:Praticien,creneaux?:Array<Creneau>){}
+  constructor(public id?:number, public version?:number, public nom?:string, public virtuel?:boolean, public adr?:Adresse, public praticien?:Praticien, public creneaux?:Array<Creneau>){}
 }

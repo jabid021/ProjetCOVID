@@ -5,7 +5,7 @@ import {Praticien} from "./praticien";
 
 export class Creneau
 {
-  constructor(id?:number,version?:number,dateCreneau?:Date,heureCreneau?:Date,duree?:number,dispo?:boolean,lieu?:Lieu,practicien?:Praticien,consultation?:Consultation) {
+  constructor(public id?:number, public version?:number, public dateCreneau?:Date, public heureCreneau?:Date, public duree?:number, public dispo?:boolean, public lieu?:Lieu, public practicien?:Praticien, public consultation?:Consultation) {
 
   }
 
