@@ -5,17 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {PraticienInfosPersoComponent} from "./practicien-infos-perso/praticien-infos-perso.component";
 import {HttpClientModule} from "@angular/common/http";
+import { AccueilComponent } from './accueil/accueil.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PraticienInfosPersoComponent
+    PraticienInfosPersoComponent,
+    AccueilComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

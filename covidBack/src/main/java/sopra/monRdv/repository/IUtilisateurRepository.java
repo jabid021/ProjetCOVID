@@ -36,4 +36,7 @@ public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Long>
 	
 	@Query("select u from Utilisateur u where u.email = :email and u.motDePasse = :motDePasse")
 	Optional<Utilisateur> findByEmailAndMotDePasse(@Param("email") String email, @Param("motDePasse") String motDePasse);
+	
+	@Query("select p from Praticien p left join fetch p.specialites spe")
+	List<Praticien> findAllPraticienWithSpecialites();
 }
