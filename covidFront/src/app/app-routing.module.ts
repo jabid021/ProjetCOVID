@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: "accueil", component: AccueilComponent},
   {path:"infos-praticien",component:PraticienInfosPersoComponent},
   {path: "patient-info", component: PatientInfoComponent},
+  {path: "patient-info/:id", component: PatientInfoComponent},
   {path: "motif", component: MotifComponent},
   {path: "lieu", component: LieuComponent},
   {path: "administrator", component: AdministrateurComponent},

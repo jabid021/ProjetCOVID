@@ -8,12 +8,9 @@ export class PatientService {
 
   patients: Array<Patient> = new Array<Patient>();
 
-  constructor() {
-    this.patients.push(new Patient(1, 0,"Dupont","Léa", "aaa@bbb", "aaaaa", null, "17/05/1995", "789654123", "0644444444"));
-    this.patients.push(new Patient(1, 0,"Smith","Angelina", "aaa@bbb", "aaaaa", null, "17/05/1995", "789654123", "0644444444"));
-    this.patients.push(new Patient(1, 0,"Doe","John", "aaa@bbb", "aaaaa", null, "17/05/1995", "789654123", "0644444444"));
+  constructor() {}
 
-  }
+
 
   findAll(): Array<Patient> {
     return this.patients;
