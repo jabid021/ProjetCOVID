@@ -5,6 +5,8 @@ public class Views {
 	
 	public static class ViewUtilisateur extends ViewCommon {}
 	
+	public static class ViewConnexion extends ViewCommon {}
+	
 	public static class ViewPatient extends ViewCommon {}
 	
 	public static class ViewPraticien extends ViewUtilisateur {}

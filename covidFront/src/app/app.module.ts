@@ -15,7 +15,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
 import { BooleanOuiPipe } from './boolean-oui.pipe';
-
+import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { BooleanOuiPipe } from './boolean-oui.pipe';
     LieuComponent,
     AccueilComponent,
     AdministrateurComponent,
-    BooleanOuiPipe
+    BooleanOuiPipe,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,

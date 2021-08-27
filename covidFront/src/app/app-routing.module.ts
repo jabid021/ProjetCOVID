@@ -8,6 +8,7 @@ import {PatientInfoService} from "./patient-info/patient-info.service";
 import {AdministrateurService} from "./administrateur/administrateur.service";
 import {LieuComponent} from "./lieu/lieu.component";
 import {MotifComponent} from "./motif/motif.component";
+import {ConnexionComponent} from "./connexion/connexion.component";
 
 let PatientRdvAVenirComponentComponent;
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "praticien-infos", component: PraticienInfosPersoComponent},
   {path: "praticien-infos/:id", component: PraticienInfosPersoComponent},
   {path: "accueil", component: AccueilComponent},
+  {path: "connexion", component: ConnexionComponent},
   {path: "", redirectTo: "accueil", pathMatch: "full"},
   {path:"infos-praticien",component:PraticienInfosPersoComponent},
   {path: "patient-info", component: PatientInfoService},
