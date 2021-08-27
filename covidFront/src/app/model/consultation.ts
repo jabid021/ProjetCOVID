@@ -5,6 +5,6 @@ import {Praticien} from "./praticien";
 
 export class Consultation
 {
-  constructor(public id?:number, public version?:number,public statut?:string,public codification?:string,public creneaux?:Array<Creneau>,public motif?:Motif,public patient?:Patient,public practicien?:Praticien) {
+  constructor(public id?:number, public version?:number,public statut?:string,public codification?:string,public creneaux?:Array<Creneau>,public motif?:Motif,public patient?:Patient,public praticien?:Praticien) {
   }
 }
