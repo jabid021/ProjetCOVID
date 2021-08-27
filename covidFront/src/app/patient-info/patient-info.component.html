@@ -1,22 +1,25 @@
 <div class="container-fluid patient-info">
 
-  <div class="row">
-    <div class="col-4" >
+  <div class="row" >
+    <div class="col-2"><img src="" width="150"></div>
+    <div class="col-4">
       <h4>Informations générales :</h4>
       Nom : {{patient.nom}} <br>
       Prénom : {{patient.prenom}} <br>
       Email : {{patient.email}}<br>
       Mot de Passe : {{patient.motDePasse}}<br>
+
     </div>
+    <br>
     <div class="col-4" >
-      <h4>Informations supplémentaires : </h4>
+      <h4 >Informations supplémentaires : </h4>
       Date de Naissance : {{patient.dateNaissance}}<br>
       Numéro sécurité sociale : {{patient.numeroSS}}<br>
       Téléphone : {{patient.telephone}}<br>
       consultations : {{patient.consultations}}<br>
      </div>
 
-    <div class="col-12"><input class="btnUpdate" type="button" (click)="edit(1)" value="Modifer"></div><br><br><br>
+    <div class="col-12"><input class="btn btn-success" type="button" (click)="edit(1)" value="Modifer"></div><br><br><br>
     <div class="col-12">
 
 
