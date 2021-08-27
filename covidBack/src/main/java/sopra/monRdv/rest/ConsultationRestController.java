@@ -48,7 +48,7 @@ public class ConsultationRestController {
 	}
 	
 	@GetMapping("/{id}/with-ue")
-	@JsonView(Views.ViewConsultationWithPatient.class)
+	//@JsonView(Views.ViewConsultationWithPatient.class)
 	public Consultation findWithPatient(@PathVariable Long id) {
 
 		Optional<Consultation> optConsultation = consultationRepo.findById(id);
