@@ -12,7 +12,7 @@ export class LieuHttpService {
   lieux : Array<Lieu> = new Array<Lieu>();
 
   constructor(private http: HttpClient, private appConfigService: AppConfigService) {
-    this.load()
+    this.load();
   }
 
   load() {
@@ -40,4 +40,9 @@ export class LieuHttpService {
       this.load();
     }, error => console.log(error));
   }
+
+  deleteById(id: number): Observable<void> {
+    return this.http.delete<void>(this.appConfigService.backEndUrl + "lieu/" + id);
+  }
+
 }

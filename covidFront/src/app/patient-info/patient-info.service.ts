@@ -17,27 +17,23 @@ export class PatientInfoService {
   }
 
   findById(id: number): Observable<Patient> {
-    return this.http.get<Patient>(this.appConfigService.backEndUrl + "patient/info/" + id);
+    return this.http.get<Patient>(this.appConfigService.backEndUrl + "patient/" + id);
   }
 
   create(patient: Patient) {
-    this.http.post<Patient>(this.appConfigService.backEndUrl + "patient/info/", patient).subscribe(response => {
+    this.http.post<Patient>(this.appConfigService.backEndUrl + "patient/", patient).subscribe(response => {
       this.load();
     }, error => console.log(error));
   }
 
   modify(patient: Patient) {
-    this.http.put<Patient>(this.appConfigService.backEndUrl + "patient/info/" + patient.id, patient).subscribe(response => {
+    this.http.put<Patient>(this.appConfigService.backEndUrl + "patient/" + patient.id, patient).subscribe(response => {
       this.load();
     }, error => console.log(error));
   }
 
-  deleteById(id: number): Observable<void> {
-    return this.http.delete<void>(this.appConfigService.backEndUrl + "patient/" + id);
-  }
-
   load() {
-    this.http.get<Array<Patient>>(this.appConfigService.backEndUrl + "patient/info/").subscribe(response => {
+    this.http.get<Array<Patient>>(this.appConfigService.backEndUrl + "patient/").subscribe(response => {
       this.patients = response;
     }, error => console.log(error));
   }

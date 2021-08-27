@@ -3,13 +3,18 @@ package sopra.monRdv.model;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Embeddable
 public class Adresse {
 	@Column(length = 255)
+	@JsonView(Views.ViewCommon.class)
 	private String rue;
 	@Column(length = 10)
+	@JsonView(Views.ViewCommon.class)
 	private String codePostal;
 	@Column(length = 255)
+	@JsonView(Views.ViewCommon.class)
 	private String ville;
 
 	public Adresse() {

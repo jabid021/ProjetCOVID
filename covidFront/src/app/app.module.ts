@@ -15,6 +15,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { MotifComponent } from './motif/motif.component';
 import { LieuComponent } from './lieu/lieu.component';
 import { BooleanOuiPipe } from './boolean-oui.pipe';
+import {TyperdvPipe} from "./typerdv.pipe";
 import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
@@ -23,12 +24,14 @@ import { ConnexionComponent } from './connexion/connexion.component';
     PatientRdvPasseComponent,
     PatientRdvAVenirComponent,
     PatientComponent,
+    PatientInfoComponent,
     PraticienInfosPersoComponent,
     MotifComponent,
     LieuComponent,
     AccueilComponent,
     AdministrateurComponent,
     BooleanOuiPipe,
+    TyperdvPipe,
     ConnexionComponent
   ],
   imports: [
