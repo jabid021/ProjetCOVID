@@ -3,6 +3,7 @@ import {Praticien} from "../model/praticien";
 import {PraticienService} from "../praticien/praticien.service";
 import {Adresse} from "../model/adresse";
 import {Specialite} from "../model/specialite";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -12,31 +13,25 @@ import {Specialite} from "../model/specialite";
 })
 export class PraticienInfosPersoComponent implements OnInit {
 
-  praticien: Praticien = new Praticien();
+  praticien: Praticien=new Praticien();
   praticienForm: Praticien = null;
   constructor(private praticienService: PraticienService) {
+
   }
 
   ngOnInit(): void {
-    
+    this.find(1);
   }
 
-  find() {
-    let id=1;
-    this.praticienService.findById(id).subscribe(response=>
+  find(id:number)  {
+    this.praticienService.findByIdWithSpecialites(id).subscribe(response=>
       {
         this.praticien=response;
-        this.praticien=new Praticien();
-        if(this.praticien.adresse==null)
-        {
-          this.praticien.adresse=new Adresse();
-        }
-        console.log(response);
       },
       error=>console.log(error));
   }
 
-  edit(id: number) {
+  edit() {
        this.praticienForm=new Praticien(this.praticien.id,this.praticien.version,this.praticien.nom,this.praticien.prenom,this.praticien.email,this.praticien.motDePasse, this.praticien.adresse,this.praticien.matricule,this.praticien.telephone,this.praticien.photo,this.praticien.convention,this.praticien.carteVitale,this.praticien.cb,this.praticien.cheque, this.praticien.espece,this.praticien.dureeCrenau,this.praticien.specialites,this.praticien.lieux,this.praticien.creneaux,this.praticien.motifs);
         if(this.praticienForm.adresse==null) {
           this.praticienForm.adresse = new Adresse();

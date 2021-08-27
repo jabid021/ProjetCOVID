@@ -23,11 +23,10 @@ import { LieuComponent } from './lieu/lieu.component';
     PatientRdvAVenirComponent,
     PatientComponent,
     PraticienInfosPersoComponent,
+    MotifComponent,
+    LieuComponent,
     AccueilComponent,
-    AppComponent,
-    MotifComponent,
-    LieuComponent
-    MotifComponent,
+    AdministrateurComponent
   ],
   imports: [
     BrowserModule,

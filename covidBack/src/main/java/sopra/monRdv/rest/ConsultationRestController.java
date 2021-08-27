@@ -18,9 +18,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import sopra.formation.model.Formateur;
-import sopra.formation.model.Views;
 import sopra.monRdv.model.Consultation;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IConsultationRepository;
 
 @RestController
@@ -49,7 +48,7 @@ public class ConsultationRestController {
 	}
 	
 	@GetMapping("/{id}/with-ue")
-	@JsonView(Views.ViewConsultationWithPatient.class)
+	//@JsonView(Views.ViewConsultationWithPatient.class)
 	public Consultation findWithPatient(@PathVariable Long id) {
 
 		Optional<Consultation> optConsultation = consultationRepo.findById(id);
