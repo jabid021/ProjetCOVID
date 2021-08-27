@@ -18,67 +18,63 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import sopra.monRdv.model.Praticien;
+import sopra.monRdv.model.PraticienSpecialite;
 import sopra.monRdv.model.Views;
-import sopra.monRdv.repository.IUtilisateurRepository;
+import sopra.monRdv.repository.IPraticienSpecialiteRepository;
 
 @RestController
-@RequestMapping("/praticien")
+@RequestMapping("/praticien-specialite")
 @CrossOrigin("*")
-public class PraticienRestController {
-
+public class PraticienSpecialiteRestController {
 	@Autowired
-	private IUtilisateurRepository utilisateurRepo;
+	private IPraticienSpecialiteRepository praticienSpecialiteRepo;
 
 	@GetMapping("")
-	public List<Praticien> findAll() {
-		return utilisateurRepo.findAllPraticien();
-	}
-	
-	@GetMapping("/with-specialites")
-	@JsonView(Views.ViewPraticienWithSpecialites.class)
-	public List<Praticien> findAllPraticienWithSpecialites() {
-		return utilisateurRepo.findAllPraticienWithSpecialites();
+	@JsonView(Views.ViewPraticienSpecialite.class)
+	public List<PraticienSpecialite> findAll() {
+		return praticienSpecialiteRepo.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public Praticien find(@PathVariable Long id) {
+	@JsonView(Views.ViewPraticienSpecialite.class)
+	public PraticienSpecialite find(@PathVariable Long id) {
 
-		Optional<Praticien> optPraticien = utilisateurRepo.findPraticienById(id);
+		Optional<PraticienSpecialite> optPraticienSpecialite = praticienSpecialiteRepo.findById(id);
 
-		if (optPraticien.isPresent()) {
-			return optPraticien.get();
+		if (optPraticienSpecialite.isPresent()) {
+			return optPraticienSpecialite.get();
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
 	}
 
 	@PostMapping("")
-	@JsonView(Views.ViewPraticien.class)
-	public Praticien create(@RequestBody Praticien praticien) {
-		praticien = utilisateurRepo.save(praticien);
+	@JsonView(Views.ViewPraticienSpecialite.class)
+	public PraticienSpecialite create(@RequestBody PraticienSpecialite praticienSpecialite) {
+		praticienSpecialite = praticienSpecialiteRepo.save(praticienSpecialite);
 
-		return praticien;
+		return praticienSpecialite;
 	}
 
 	@PutMapping("/{id}")
-	@JsonView(Views.ViewPraticien.class)
-	public Praticien update(@RequestBody Praticien praticien, @PathVariable Long id) {
-		if (!utilisateurRepo.existsById(id)) {
+	@JsonView(Views.ViewPraticienSpecialite.class)
+	public PraticienSpecialite update(@RequestBody PraticienSpecialite praticienSpecialite, @PathVariable Long id) {
+		if (!praticienSpecialiteRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
 
-		praticien = utilisateurRepo.save(praticien);
+		praticienSpecialite = praticienSpecialiteRepo.save(praticienSpecialite);
 
-		return praticien;
+		return praticienSpecialite;
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
-		if (!utilisateurRepo.existsById(id)) {
+		if (!praticienSpecialiteRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
 
-		utilisateurRepo.deleteById(id);
+		praticienSpecialiteRepo.deleteById(id);
 	}
+
 }

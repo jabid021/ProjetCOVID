@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Specialite;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.ISpecialiteRepository;
 
 @RestController
@@ -28,11 +31,13 @@ public class SpecialiteRestController {
 	private ISpecialiteRepository specialiteRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewSpecialite.class)
 	public List<Specialite> findAll() {
 		return specialiteRepo.findAll();
 	}
 
 	@GetMapping("/{id}")
+	@JsonView(Views.ViewSpecialite.class)
 	public Specialite find(@PathVariable Long id) {
 
 		Optional<Specialite> optSpecialite = specialiteRepo.findById(id);
@@ -45,6 +50,7 @@ public class SpecialiteRestController {
 	}
 
 	@PostMapping("")
+	@JsonView(Views.ViewSpecialite.class)
 	public Specialite create(@RequestBody Specialite specialite) {
 		specialite = specialiteRepo.save(specialite);
 
@@ -52,6 +58,7 @@ public class SpecialiteRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewSpecialite.class)
 	public Specialite update(@RequestBody Specialite specialite, @PathVariable Long id) {
 		if (!specialiteRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");

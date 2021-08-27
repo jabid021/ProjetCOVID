@@ -9,20 +9,26 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Table(name = "praticien_specialite", uniqueConstraints = @UniqueConstraint(columnNames = { "praticien_id",
 		"specialite_id" }))
 public class PraticienSpecialite {
 	@Id
 	@GeneratedValue
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	@Version
+	@JsonView(Views.ViewCommon.class)
 	private int version;
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
+	@JsonView({Views.ViewPraticienSpecialite.class})
 	private Praticien praticien;
 	@ManyToOne
 	@JoinColumn(name = "specialite_id")
+	@JsonView({Views.ViewPraticienSpecialite.class, Views.ViewPraticienWithSpecialites.class})
 	private Specialite specialite;
 
 	public PraticienSpecialite() {

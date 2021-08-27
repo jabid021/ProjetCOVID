@@ -8,4 +8,8 @@ public class Views {
 	public static class ViewPraticien extends ViewUtilisateur {}
 	
 	public static class ViewPraticienWithSpecialites extends ViewPraticien {}
+	
+	public static class ViewSpecialite extends ViewCommon {}
+	
+	public static class ViewPraticienSpecialite extends ViewCommon {}
 }
